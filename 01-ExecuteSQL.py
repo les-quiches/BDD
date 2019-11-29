@@ -4,13 +4,13 @@ import sys
 import os
 
 data=[]
-data_file_agences_client = 'data.txt'
+data_file_agences_client = 'data.sql'
 data_file_compte = 'Comptes.csv'
 data_file_operation = 'Operations.csv'
 table=[]
-table_file = "table.txt"
+table_file = "table.sql"
 commande=[]
-commades_file = "commande.txt"
+commades_file = "commande.sql"
 
 
 def OPEN_FILE_XML(filename):
