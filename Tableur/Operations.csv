@@ -1,0 +1,5 @@
+OPERATIONS;;;;;;
+id_operation;id_source;id_destinataire;montant;date_transaction;lieu;type
+1;5;3;305,7;10/01/2009;Creuse;virement
+2;3;3;-305,7;11/01/2009;Creuse;retrait
+3;5;5;300,7;25/12/2008;Creuse;depot
