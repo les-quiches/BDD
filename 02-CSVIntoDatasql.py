@@ -8,7 +8,7 @@ fichier = []
 fichier.append("Tableur/Comptes.csv")
 fichier.append("Tableur/Operations.csv")
 
-file="data_auto.txt"
+file="data_auto.sql"
 
 def main():
     data_auto=""
