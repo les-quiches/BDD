@@ -68,5 +68,8 @@ INSERT INTO OPERATIONS(id_operation,id_emeteur,id_recepteur,montant,date_transac
 INSERT INTO OPERATIONS(id_operation,id_emeteur,id_recepteur,montant,date_transaction,lieu,type) VALUES (2, 3, 3, -305.7, '11/01/2009', 'Creuse', 'retrait');
 INSERT INTO OPERATIONS(id_operation,id_emeteur,id_recepteur,montant,date_transaction,lieu,type) VALUES (3, 5, 5, 300.7, '25/12/2008', 'Creuse', 'depot');
 
-SELECT * FROM AGENCES;
+SELECT nom_agence,ville FROM AGENCES;
+SELECT nom_client,prenom_client FROM CLIENTS;
+SELECT COUNT(id_compte) FROM COMPTES;
+SELECT COUNT(id_operation) FROM OPERATIONS;
 SELECT nom_client FROM CLIENTS WHERE adresse ='Plouzane';
