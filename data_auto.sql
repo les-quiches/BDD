@@ -2,7 +2,7 @@ INSERT INTO AGENCES(id_agence,nom_agence,numero,ville,telephone,url) VALUES (1,'
 INSERT INTO AGENCES(id_agence,nom_agence,numero,ville,telephone,url) VALUES (2,'Progeliance',37089163,'Plouzane','02 63 19 37 12','progeliance.labanque.fr');
 INSERT INTO AGENCES(id_agence,nom_agence,numero,ville,telephone,url) VALUES (3,'Bankal',123456,'Creuse','04 76 23 19 37','cestouquonest.fr');
 INSERT INTO AGENCES(id_agence,nom_agence,numero,ville,telephone,url) VALUES (4,'Planque-Tune',99672198,'Lausane','(+41)54 757 8978','biengarder.su');
-INSERT INTO CLIENTS(id_client,nom_client,prenom_client,adresse,telephone) VALUES (1,'Alfonci','Antoine','Plouzane','07 70 27 43 98');
+INSERT INTO CLIENTS(id_client,nom_client,prenom_client,adresse,telephone) VALUES (1,'Alfonsi','Antoine','Plouzane','07 70 27 43 98');
 INSERT INTO CLIENTS(id_client,nom_client,prenom_client,adresse,telephone) VALUES (2,'Vanilla','Clyde','Creuse','07 00 02 32 10');
 INSERT INTO CLIENTS(id_client,nom_client,prenom_client,adresse,telephone) VALUES (3,'Archiford','Auguste','Plouzane','07 42 69 34 72');
 INSERT INTO CLIENTS(id_client,nom_client,prenom_client,adresse,telephone) VALUES (4,'Mikoto','Billy','Brest','06 37 29 36 25');

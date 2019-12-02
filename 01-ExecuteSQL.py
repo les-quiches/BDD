@@ -49,7 +49,6 @@ def main():
             i = clean_sql(i)
             if i!='':
                 i = i+";"
-                print i
                 cursor.execute(i)
                 bd.commit()
         #execute data (CLIENTS AGENCES)
@@ -58,7 +57,6 @@ def main():
             i=clean_sql(i)
             if i!='':
                 i = i+";"
-                print i
                 cursor.execute(i)
                 bd.commit()
 

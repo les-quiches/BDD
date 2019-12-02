@@ -3,8 +3,20 @@ SELECT * FROM CLIENTS;
 SELECT * FROM COMPTES;
 SELECT * FROM OPERATIONS;
 
-SELECT prenom_client,nom_client,id_compte,id_client
- FROM COMPTES NATURAL JOIN CLIENTS;
-SELECT id_operation,id_recepteur,id_emeteur
- FROM OPERATIONS
- WHERE type = 'virement';
+
+SELECT *
+ FROM COMPTES JOIN CLIENTS,AGENCES ON (COMPTES.id_client=CLIENTS.id_client AND COMPTES.id_agence = AGENCES.id_agence);
+
+SELECT telephone
+ FROM clients
+ WHERE nom_client = 'Alfonsi' AND prenom_client = 'Antoine';
+
+
+SELECT url
+ FROM agences
+ WHERE nom_agence='Bankal';
+
+
+SELECT co.numero
+ FROM comptes co NATURAL JOIN clients cl
+ WHERE cl.nom_client='Archiford' AND cl.prenom_client = 'Auguste';
