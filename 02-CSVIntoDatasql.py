@@ -3,8 +3,8 @@ import sys
 import os
 
 fichier = []
-#fichier.append("Agences.csv")
-#fichier.append("Clients.csv")
+fichier.append("Tableur/Agences.csv")
+fichier.append("Tableur/Clients.csv")
 fichier.append("Tableur/Comptes.csv")
 fichier.append("Tableur/Operations.csv")
 
@@ -38,7 +38,7 @@ def main():
                     a += var2
                 except:
                     a += "'"+var2+"'"
-            data_auto+= commande +a +"); \n"
+            data_auto+= commande +a +");\n"
     print data_auto
     myFile=open(file,"w")
     myFile.write(data_auto)

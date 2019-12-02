@@ -1,5 +1,10 @@
-SELECT nom_agence,ville FROM AGENCES;
-SELECT nom_client,prenom_client FROM CLIENTS;
-SELECT COUNT(id_compte) FROM COMPTES;
-SELECT COUNT(id_operation) FROM OPERATIONS;
-SELECT nom_client FROM CLIENTS WHERE adresse ='Plouzane';
+SELECT * FROM AGENCES;
+SELECT * FROM CLIENTS;
+SELECT * FROM COMPTES;
+SELECT * FROM OPERATIONS;
+
+SELECT prenom_client,nom_client,id_compte,id_client
+ FROM COMPTES NATURAL JOIN CLIENTS;
+SELECT id_operation,id_recepteur,id_emeteur
+ FROM OPERATIONS
+ WHERE type = 'virement';

@@ -4,7 +4,8 @@ CREATE TABLE AGENCES(
   numero INTEGER,
   ville TEXT,
   telephone VARCHAR(20) DEFAULT '0000000000',
-  url TEXT);
+  url TEXT
+);
 
 CREATE TABLE CLIENTS(
   id_client INTEGER NOT NULL PRIMARY KEY,
@@ -34,6 +35,6 @@ CREATE TABLE OPERATIONS(
   date_transaction VARCHAR(20),
   lieu VARCHAR(20),
   type TEXT,
-  FOREIGN KEY (id_operation) REFERENCES CLIENTS(id_client),
-  FOREIGN KEY (id_emeteur) REFERENCES CLIENTS(id_client)
+  FOREIGN KEY (id_recepteur) REFERENCES COMPTES(id_compte),
+  FOREIGN KEY (id_emeteur) REFERENCES COMPTES(id_compte)
 );

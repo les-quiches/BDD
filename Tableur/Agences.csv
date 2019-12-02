@@ -1,0 +1,6 @@
+AGENCES;;;;;
+id_agence;nom_agence;numero;ville;telephone;url
+1;ENIBAR;56978134;Plouzane;02 89 52 38 19;enib.net
+2;Progeliance;37089163;Plouzane;02 63 19 37 12;progeliance.labanque.fr
+3;Bankal;123456;Creuse;04 76 23 19 37;cestouquonest.fr
+4;Planque-Tune;99672198;Lausane;(+41)54 757 8978;biengarder.su

@@ -4,9 +4,7 @@ import sys
 import os
 
 data=[]
-data_file_agences_client = 'data.sql'
-data_file_compte = 'Comptes.csv'
-data_file_operation = 'Operations.csv'
+data_file = 'data_auto.sql'
 table=[]
 table_file = "table.sql"
 commande=[]
@@ -51,14 +49,16 @@ def main():
             i = clean_sql(i)
             if i!='':
                 i = i+";"
+                print i
                 cursor.execute(i)
                 bd.commit()
         #execute data (CLIENTS AGENCES)
-        data=SPLIT(OPEN_FILE_XML(data_file_agences_client),";")
+        data=SPLIT(OPEN_FILE_XML(data_file),";")
         for i in data:
             i=clean_sql(i)
             if i!='':
                 i = i+";"
+                print i
                 cursor.execute(i)
                 bd.commit()
 
