@@ -14,7 +14,6 @@ SELECT co.numero
  FROM comptes co NATURAL JOIN clients cl
  WHERE cl.nom_client='Archiford' AND cl.prenom_client = 'Auguste';
 
-
 --Trouver les virements fait par une personne particulière(6) entre ses propres comptes.;
 CREATE VIEW T1 AS
  SELECT *
