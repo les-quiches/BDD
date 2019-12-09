@@ -1,34 +1,54 @@
-SELECT * FROM AGENCES;
-SELECT * FROM CLIENTS;
-SELECT * FROM COMPTES;
-SELECT * FROM OPERATIONS;
 
-
-SELECT *
- FROM COMPTES JOIN CLIENTS,AGENCES ON (COMPTES.id_client=CLIENTS.id_client AND COMPTES.id_agence = AGENCES.id_agence);
-
+--Trouver le numéro de téléphone d’une personne (Alfonsi, Antoine) particulière.;
 SELECT telephone
  FROM clients
  WHERE nom_client = 'Alfonsi' AND prenom_client = 'Antoine';
 
-
+--l’URL d’une agence (Bankal) .;
 SELECT url
  FROM agences
  WHERE nom_agence='Bankal';
 
-
+--Trouver les comptes bancaires d’une personne particulière (Archiford, Auguste);
 SELECT co.numero
  FROM comptes co NATURAL JOIN clients cl
  WHERE cl.nom_client='Archiford' AND cl.prenom_client = 'Auguste';
 
-SELECT id_operation,montant
- FROM OPERATIONS;
 
-
-SELECT *
- FROM OPERATIONS op JOIN CLIENTS cl, AGENCES ag,COMPTES co
- ON (co.id_client = cl.id_client AND co.id_agence = ag.id_agence AND co.id_compte = op.id_emeteur)
- UNION
+--Trouver les virements fait par une personne particulière(6) entre ses propres comptes.;
+CREATE VIEW T1 AS
  SELECT *
- FROM OPERATIONS op JOIN CLIENTS cl, AGENCES ag,COMPTES co
- ON (co.id_client = cl.id_client AND co.id_agence = ag.id_agence AND co.id_compte = op.id_recepteur);
+   FROM OPERATIONS op JOIN COMPTES co
+   ON (co.id_compte = op.id_emeteur)
+   GROUP BY id_operation;
+
+CREATE VIEW T2 AS
+ SELECT *
+   FROM OPERATIONS op JOIN COMPTES co
+   ON (co.id_compte = op.id_recepteur)
+   GROUP BY id_operation;
+
+SELECT T1.id_operation
+ FROM T1 JOIN T2
+ ON (T1.id_operation = T2.id_operation AND T1.id_client=T2.id_client AND T1.type=T2.type)
+ WHERE (T1.id_client=6 AND T1.type='virement');
+
+DROP VIEW IF EXISTS T1;
+DROP VIEW IF EXISTS T2;
+
+--Le nom(n) prenom(m) des personnes clientes chez une agence particulière (1);
+SELECT nom_client, prenom_client
+ FROM COMPTES co JOIN CLIENTS cl ON (co.id_client= cl.id_client)
+ WHERE id_agence = 1;
+
+--Les personnes(id) qui ont des comptes dans toutes les agences.;
+
+--Le capital total d’une personne (3)  (l’argent dans tous ses comptes).;
+SELECT sum(solde)
+ FROM COMPTES
+ WHERE id_client = 3;
+
+--Le nombre d’opérations faites par une agence(1) ces deux dernières années.;
+SELECT count(id_operation)
+ FROM COMPTES co JOIN OPERATIONS op ON (op.id_emeteur = co.id_client)
+ WHERE id_agence = 1;
