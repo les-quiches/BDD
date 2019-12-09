@@ -20,3 +20,15 @@ SELECT url
 SELECT co.numero
  FROM comptes co NATURAL JOIN clients cl
  WHERE cl.nom_client='Archiford' AND cl.prenom_client = 'Auguste';
+
+SELECT id_operation,montant
+ FROM OPERATIONS;
+
+
+SELECT *
+ FROM OPERATIONS op JOIN CLIENTS cl, AGENCES ag,COMPTES co
+ ON (co.id_client = cl.id_client AND co.id_agence = ag.id_agence AND co.id_compte = op.id_emeteur)
+ UNION
+ SELECT *
+ FROM OPERATIONS op JOIN CLIENTS cl, AGENCES ag,COMPTES co
+ ON (co.id_client = cl.id_client AND co.id_agence = ag.id_agence AND co.id_compte = op.id_recepteur);
