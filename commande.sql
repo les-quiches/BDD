@@ -41,6 +41,15 @@ SELECT nom_client, prenom_client
  WHERE id_agence = 1;
 
 --Les personnes(id) qui ont des comptes dans toutes les agences.;
+SELECT DISTINCT id_client
+ FROM COMPTES c1
+ WHERE NOT EXISTS (
+ SELECT *
+   FROM AGENCES a
+   WHERE NOT EXISTS ( SELECT *
+     FROM COMPTES c2
+     WHERE c1.id_client = c2.id_client AND c2.id_agence = a.id_agence )
+);
 
 --Le capital total d’une personne (3)  (l’argent dans tous ses comptes).;
 SELECT sum(solde)
@@ -51,3 +60,19 @@ SELECT sum(solde)
 SELECT count(id_operation)
  FROM COMPTES co JOIN OPERATIONS op ON (op.id_emeteur = co.id_client)
  WHERE id_agence = 1;
+
+--Les Opération classé par le montant.;
+SELECT montant,id_operation
+ FROM OPERATIONS
+ GROUP BY montant;
+
+--Le nombre d’agences par ville.;
+SELECT ville,count(id_agence)
+ FROM AGENCES
+ GROUP BY ville;
+
+--Les comptes par agence ayant leur solde dans le négatif.;
+SELECT id_compte,id_agence
+ FROM COMPTES
+ WHERE solde < 0
+ GROUP BY id_agence
