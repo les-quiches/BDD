@@ -4,7 +4,7 @@ import sys
 import os
 
 data=[]
-file = "rendu/LOUISLEDENMAT_REYNES_BANQUE_V2.sql"
+file = "rendu/LOUISLEDENMAT_REYNES_BANQUE_V3.sql"
 
 def OPEN_FILE_XML(filename):
     #Lit le fichier selectionner "filename" et le renvois
